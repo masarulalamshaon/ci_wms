@@ -1,6 +1,21 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jan 24, 2025 at 07:07 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `wms_db`
@@ -25,16 +40,16 @@ CREATE TABLE `admin` (
   `admin_status` varchar(100) NOT NULL,
   `admin_created` datetime NOT NULL DEFAULT current_timestamp(),
   `admin_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_user`, `admin_pass`, `admin_nama`, `admin_alamat`, `admin_email`, `admin_telepon`, `admin_ip`, `admin_online`, `admin_level_kode`, `admin_status`, `admin_created`, `admin_updated`) VALUES
-('admin', '0192023a7bbd73250516f069df18b500', 'Mark Cooper', 'Here St. Over There, Anywhere, 2306', 'admin@mail.com', '9564897544', '', 0, 1, 'A', '2019-02-01 22:19:14', '2022-06-13 13:13:42'),
-('staff1', 'ab4c31c66f9fe6485aefd34c3c9c88a1', 'Staff 101', 'Sample Address', '', '4569872', '', 0, 2, 'A', '2022-06-13 09:34:04', '2022-06-13 09:42:46'),
-('staff2', '2bf4351232ec393d2a436d73dcb69dcf', 'Staff 102', 'Sample Address', '', '7864321', '', 0, 3, 'A', '2022-06-13 09:34:26', '2022-06-13 09:43:46');
+('admin', '2c8ee6f70a057e83fae0bbcf5543961a', 'Abdur Rahim', 'Uttara , Dhaka 1230', 'admin@mail.com', '01920213138', '', 0, 1, 'A', '2019-02-01 22:19:14', '2025-01-24 11:55:24'),
+('staff1', '5eab4c75ef3d8d7d6fd0ff7614c3356c', 'Staff 101', 'Khilkhet', '', '01945665400', '', 0, 2, 'A', '2022-06-13 09:34:04', '2025-01-24 11:56:17'),
+('staff2', '3833a3e3474e9532ff6b1df1ab01b54b', 'Staff 102', 'Tongi', '', '01711122201', '', 0, 3, 'A', '2022-06-13 09:34:26', '2025-01-24 11:55:52');
 
 -- --------------------------------------------------------
 
@@ -48,7 +63,7 @@ CREATE TABLE `admin_level` (
   `admin_level_status` char(1) NOT NULL,
   `admin_level_created` datetime NOT NULL DEFAULT current_timestamp(),
   `admin_level_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin_level`
@@ -72,23 +87,20 @@ CREATE TABLE `customer` (
   `notelp_customer` varchar(12) NOT NULL,
   `customer_created` datetime NOT NULL DEFAULT current_timestamp(),
   `customer_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id_customer`, `nama_customer`, `alamat_customer`, `notelp_customer`, `customer_created`, `customer_updated`) VALUES
-(1, 'John Watson', '855 Rosemary St', '46552000', '2022-01-18 18:40:10', '2022-01-18 18:40:10'),
-(2, 'Jack Stuart', '854 Louis St', '04522260', '2022-01-19 10:59:12', '2022-01-19 10:59:12'),
-(3, 'Douglas Stover', '17 Lake Forest Drive', '06665210', '2022-01-19 17:13:24', '2022-01-19 17:13:24'),
-(4, 'Curtis Maury', '1342 Wayside Lane', '10458600', '2022-01-19 17:14:03', '2022-01-19 17:14:03'),
-(5, 'Betty Wright', '1205 Cardinal Lane', '01478000', '2022-01-19 17:14:23', '2022-01-19 17:14:23'),
-(6, 'George', '19 Gerald Bates Drive', '03690005', '2022-01-19 17:14:54', '2022-01-19 17:14:54'),
-(7, 'Richard', '469 Providence Lane', '01478005', '2022-01-19 17:15:25', '2022-01-19 17:15:25'),
-(8, 'Casie Dixon', '361 Bassel St', '02580014', '2022-01-19 17:15:54', '2022-01-19 17:15:54'),
-(9, 'Will Williams', '4569 Down St', '45654000', '2022-01-20 11:19:58', '2022-01-20 11:19:58'),
-(10, 'Customer 101', 'Sample Address 101', '0931456789', '2022-06-13 09:15:59', '2022-06-13 09:15:59');
+(11, 'Tanvir', 'Tongi', '01312365478', '2025-01-24 11:49:43', '2025-01-24 11:49:43'),
+(12, 'Rifat', 'Uttara', '01845622101', '2025-01-24 11:50:59', '2025-01-24 11:50:59'),
+(13, 'Sagor', 'Mohakhali', '01612365478', '2025-01-24 11:52:25', '2025-01-24 11:52:25'),
+(14, 'Anam', 'Badda', '01978996541', '2025-01-24 11:53:02', '2025-01-24 11:53:02'),
+(15, 'Sifat', 'Mitford', '01321345600', '2025-01-24 11:53:58', '2025-01-24 11:53:58'),
+(16, 'Atik', 'Khilkhet', '01812333214', '2025-01-24 11:54:20', '2025-01-24 11:54:20'),
+(17, 'Ariful', 'Uttara', '01700000123', '2025-01-24 11:54:41', '2025-01-24 11:54:41');
 
 -- --------------------------------------------------------
 
@@ -112,14 +124,14 @@ CREATE TABLE `identitas` (
   `identitas_author` varchar(100) NOT NULL,
   `identitas_created` datetime NOT NULL DEFAULT current_timestamp(),
   `identitas_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `identitas`
 --
 
 INSERT INTO `identitas` (`identitas_id`, `identitas_website`, `identitas_deskripsi`, `identitas_keyword`, `identitas_alamat`, `identitas_notelp`, `identitas_fb`, `identitas_email`, `identitas_tw`, `identitas_gp`, `identitas_yb`, `identitas_favicon`, `identitas_author`, `identitas_created`, `identitas_updated`) VALUES
-(1, 'CI-WMS', 'Warehouse Management System in PHP CodeIgniter', 'Warehouse Management System  in PHP CodeIgniter', '569 Eren Avenue', '08123456789', 'https://www.facebook.com/CIwms', 'info@wmsmail.com', 'https://twitter.com/CIwms', 'http://CIwms.com/', 'https://www.youtube.com/wms', 'd5bf7e44b3331b3d4b0c0177e3d51f31.png', 'CI PHP - Project', '2019-02-13 22:19:42', '2022-06-13 11:40:18');
+(1, 'CI-WMS', 'Warehouse Management System in PHP', 'Warehouse Management System  in PHP', '569 Eren Avenue', '08123456789', 'https://www.facebook.com/CIwmss', 'info@wmssmail.com', 'https://twitter.com/CIwmss', 'http://CIwmss.com/', 'https://www.youtube.com/wmss', '725bfe9dd15bb1599c49249f48907a5f.png', 'CI PHP - Project', '2019-02-13 22:19:42', '2025-01-24 12:05:20');
 
 -- --------------------------------------------------------
 
@@ -132,7 +144,7 @@ CREATE TABLE `limitstock` (
   `stock` int(11) NOT NULL,
   `limitstock_created` datetime DEFAULT current_timestamp(),
   `limitstock_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `limitstock`
@@ -154,20 +166,21 @@ CREATE TABLE `master_barang` (
   `stock` int(11) NOT NULL,
   `barang_created` datetime NOT NULL DEFAULT current_timestamp(),
   `barang_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `master_barang`
 --
 
 INSERT INTO `master_barang` (`id_barang`, `nama_barang`, `merek`, `stock`, `barang_created`, `barang_updated`) VALUES
-(13, 'Test Item', 'Test Brand', 80, '2022-01-18 18:40:31', '2022-01-18 18:42:20'),
-(14, 'Item 01', 'B ONE', 1, '2022-01-19 10:58:26', '2022-01-19 17:48:11'),
-(15, 'Item 02', 'B ONE', 192, '2022-01-19 17:41:44', '2022-01-20 10:59:24'),
-(16, 'Item 03', 'B TWO', 111, '2022-01-19 17:42:01', '2022-01-19 17:59:26'),
-(17, 'Item 04', 'B THREE', 80, '2022-01-20 10:58:40', '2022-01-20 11:26:36'),
-(18, 'Item 05', 'B FOUR', 268, '2022-01-20 11:20:39', '2022-01-20 11:22:16'),
-(19, 'Product 101', 'Brand 101', 70, '2022-06-13 09:13:45', '2022-06-13 11:33:17');
+(20, 'Aa', 'Bbb', 0, '2025-01-24 11:58:22', '2025-01-24 11:58:22'),
+(21, 'Cc', 'Ddd', 0, '2025-01-24 11:58:35', '2025-01-24 11:58:35'),
+(22, 'Ee', 'Fff', 230, '2025-01-24 11:58:45', '2025-01-24 12:01:59'),
+(23, 'Gg', 'Hhh', 0, '2025-01-24 11:58:55', '2025-01-24 11:58:55'),
+(24, 'Ii', 'Jjj', 0, '2025-01-24 11:59:07', '2025-01-24 11:59:07'),
+(25, 'Kk', 'Lll', 0, '2025-01-24 11:59:28', '2025-01-24 11:59:28'),
+(26, 'Mm', 'Nnn', 830, '2025-01-24 11:59:43', '2025-01-24 12:03:04'),
+(27, 'Oo', 'Ppp', 0, '2025-01-24 11:59:55', '2025-01-24 11:59:55');
 
 -- --------------------------------------------------------
 
@@ -181,7 +194,7 @@ CREATE TABLE `sessions` (
   `user_agent` varchar(120) NOT NULL,
   `last_activity` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `user_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `sessions`
@@ -212,20 +225,17 @@ CREATE TABLE `supplier` (
   `notelp_supplier` varchar(12) NOT NULL,
   `supplier_created` datetime NOT NULL DEFAULT current_timestamp(),
   `supplier_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat_supplier`, `notelp_supplier`, `supplier_created`, `supplier_updated`) VALUES
-(1, 'XYZ Suppliers', '774 Black Street', '45478540', '2022-01-18 18:39:24', '2022-01-18 18:39:24'),
-(2, 'Ultimate Suppliers', '550 Allace Avenue', '01478500', '2022-01-19 17:37:13', '2022-01-19 17:37:13'),
-(3, 'Verion Supplies', '558 Black Street', '01478540', '2022-01-19 17:38:21', '2022-01-19 17:38:21'),
-(4, 'Avant Suppliers', '440 Enim St', '04550010', '2022-01-19 17:39:31', '2022-01-19 17:39:31'),
-(5, 'Pegasus Suppliers', '5514 Eros Avenue', '40145550', '2022-01-19 17:40:25', '2022-01-19 17:40:25'),
-(6, 'QWER Suppliers', '7741 D Street', '41000140', '2022-01-20 11:19:15', '2022-01-20 11:19:15'),
-(7, 'Supplier 101', 'Test supplier', '09123564789', '2022-06-13 09:14:41', '2022-06-13 09:14:41');
+(8, 'Abc Supplier', 'Uttara', '01321365478', '2025-01-24 11:46:07', '2025-01-24 11:46:07'),
+(9, 'Def Supplier', 'Tongi', '01721365478', '2025-01-24 11:46:29', '2025-01-24 11:46:29'),
+(10, 'Ghi Supplier', 'Mirpur', '01412365478', '2025-01-24 11:46:50', '2025-01-24 11:47:37'),
+(11, 'Jkl Supplier', 'Gazipur', '01854632101', '2025-01-24 11:47:25', '2025-01-24 11:47:25');
 
 -- --------------------------------------------------------
 
@@ -243,27 +253,17 @@ CREATE TABLE `transaksi_barang` (
   `admin_user` varchar(119) NOT NULL,
   `id_supplier` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `transaksi_barang`
 --
 
 INSERT INTO `transaksi_barang` (`id_transaksi`, `jumlah`, `tanggal_transaksi`, `transaksi_updated`, `status_pergerakan`, `id_barang`, `admin_user`, `id_supplier`, `id_customer`) VALUES
-(30, 112, '2022-01-18 12:56:57', '2022-01-18 18:41:57', '1', 13, 'admin', 1, 0),
-(31, 32, '2022-01-18 12:57:20', '2022-01-18 18:42:20', '2', 13, 'admin', 0, 1),
-(32, 56, '2022-01-19 05:13:43', '2022-01-19 10:58:43', '1', 14, 'admin', 1, 0),
-(33, 251, '2022-01-19 12:01:20', '2022-01-19 17:46:20', '1', 15, 'admin', 1, 0),
-(34, 55, '2022-01-19 12:03:11', '2022-01-19 17:48:11', '2', 14, 'admin', 0, 2),
-(35, 111, '2022-01-19 12:14:26', '2022-01-19 17:59:26', '1', 16, 'admin', 5, 0),
-(36, 59, '2022-01-20 05:14:24', '2022-01-20 10:59:24', '2', 15, 'admin', 0, 6),
-(37, 336, '2022-01-20 05:36:27', '2022-01-20 11:21:27', '1', 18, 'admin', 6, 0),
-(38, 68, '2022-01-20 05:37:16', '2022-01-20 11:22:16', '2', 18, 'admin', 0, 9),
-(39, 80, '2022-01-20 05:41:36', '2022-01-20 11:26:36', '1', 17, 'admin', 4, 0),
-(42, 100, '2022-06-13 01:31:10', '2022-06-13 09:31:10', '1', 19, 'admin', 7, 0),
-(43, 55, '2022-06-13 01:31:31', '2022-06-13 09:31:31', '2', 19, 'admin', 0, 10),
-(45, 20, '2022-06-13 03:32:59', '2022-06-13 11:32:59', '1', 19, 'admin', 7, 0),
-(46, 30, '2022-06-13 03:33:17', '2022-06-13 11:33:17', '2', 19, 'admin', 0, 10);
+(49, 230, '2025-01-24 06:01:59', '2025-01-24 12:01:59', '1', 22, 'admin', 9, 0),
+(48, 400, '2025-01-24 06:01:46', '2025-01-24 12:01:46', '1', 26, 'admin', 10, 0),
+(47, 450, '2025-01-24 06:01:29', '2025-01-24 12:01:29', '1', 26, 'admin', 11, 0),
+(50, 20, '2025-01-24 06:03:04', '2025-01-24 12:03:04', '2', 26, 'admin', 0, 17);
 
 --
 -- Indexes for dumped tables
@@ -340,7 +340,7 @@ ALTER TABLE `admin_level`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `identitas`
@@ -358,17 +358,21 @@ ALTER TABLE `limitstock`
 -- AUTO_INCREMENT for table `master_barang`
 --
 ALTER TABLE `master_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `transaksi_barang`
 --
 ALTER TABLE `transaksi_barang`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
